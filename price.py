@@ -8,7 +8,7 @@ def calculate_final_price(initial_price, num_purchases):
     current_price = initial_price
     
     for _ in range(num_purchases):
-        current_price -= current_price * 0.11  # Уменьшаем текущую цену на 11%
+        current_price += current_price * 0.11  # Уменьшаем текущую цену на 11%
         final_price += current_price  # Складываем уменьшенную цену
 
     # Округляем конечную сумму и форматируем с разделением тысяч
