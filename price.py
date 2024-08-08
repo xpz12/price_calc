@@ -1,17 +1,21 @@
 # Вводится изначальная цена
-a = int(input('Введите изначальную цену: '))
+initial_price = int(input('Введите изначальную цену: '))
 # Вводится колво покупок
-l = int(input('Введите количество покупок: '))
+num_purchases = int(input('Введите количество покупок: '))
 
-# Формула финальной цены
-def calculate_final_price(a, l):
-    final_price = a
-    for i in range(l):
-        final_price += final_price * 0.11
-    return final_price
+def calculate_final_price(initial_price, num_purchases):
+    final_price = 0
+    current_price = initial_price
+    
+    for _ in range(num_purchases):
+        current_price -= current_price * 0.11  # Уменьшаем текущую цену на 11%
+        final_price += current_price  # Складываем уменьшенную цену
+
+    # Округляем конечную сумму и форматируем с разделением тысяч
+    return f"{round(final_price):,}".replace(",", ".")
 
 # Расчет финальной цены
-final_price = calculate_final_price(a, l)
+final_price = calculate_final_price(initial_price, num_purchases)
 
 # Формула округления числа
 def format_number(final_price):
@@ -20,8 +24,6 @@ def format_number(final_price):
     # Форматируем число с разделением тысяч
     return f"{rounded_number:,}".replace(",", ".")
 
-# Округление
-final_price = format_number(final_price)
-
-# Вывод результата
-print(f'Вам нужно ${final_price} чтобы купить {l} раз')
+# Рассчитываем и выводим конечный результат
+formatted_final_price = calculate_final_price(initial_price, num_purchases)
+print(f"Конечная сумма после всех покупок: ${formatted_final_price}")
