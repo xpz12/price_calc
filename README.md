@@ -4,7 +4,7 @@
 - Python 3.11 ( скачать [тут](https://www.python.org/downloads/release/python-3110/) )
 
 ## Использование
-1. Скачайте и распакуйте архив в любую удобную папку.
+1. [Скачайте](https://github.com/xpz12/price_palc/archive/refs/heads/master.zip) и распакуйте архив в любую удобную папку.
 2. Запустите код.
    
    ```
