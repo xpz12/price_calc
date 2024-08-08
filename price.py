@@ -12,18 +12,22 @@ def calculate_final_price(initial_price, num_purchases):
         final_price += current_price  # Складываем уменьшенную цену
 
     # Округляем конечную сумму и форматируем с разделением тысяч
-    return f"{round(final_price):,}".replace(",", ".")
+    formatted_price = f"{round(final_price):,}".replace(",", ".")
 
-# Расчет финальной цены
-final_price = calculate_final_price(initial_price, num_purchases)
+    # Форматируем с единицами измерения (M, B, T, Qa, Qi)
+    formatted_with_units = format_with_units(final_price)
 
-# Формула округления числа
-def format_number(final_price):
-    # Округляем число
-    rounded_number = round(final_price)
-    # Форматируем число с разделением тысяч
-    return f"{rounded_number:,}".replace(",", ".")
+    return f"{formatted_price} ({formatted_with_units})"   
+
+def format_with_units(value):
+    units = [("Qi", 1e18), ("Qa", 1e15), ("T", 1e12), ("B", 1e9), ("M", 1e6)]
+    
+    for unit, threshold in units:
+        if value >= threshold:
+            return f"{value / threshold:.2f} {unit}"
+    
+    return f"{value:.2f}"
 
 # Рассчитываем и выводим конечный результат
-formatted_final_price = calculate_final_price(initial_price, num_purchases)
-print(f"Конечная сумма после всех покупок: ${formatted_final_price}")
+result = calculate_final_price(initial_price, num_purchases)
+print(f"Конечная сумма после всех покупок: {result}")
