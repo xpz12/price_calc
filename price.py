@@ -1,13 +1,10 @@
-# Вводится изначальная цена
-initial_price = int(input('Введите изначальную цену: '))
-# Вводится колво покупок
-num_purchases = int(input('Введите количество покупок: '))
+import main
 
-def calculate_final_price(initial_price, num_purchases):
+def calculate_final_price(initial_price, num_pricing):
     final_price = 0
     current_price = initial_price
     
-    for _ in range(num_purchases):
+    for _ in range(num_pricing):
         current_price += current_price * 0.11  # Уменьшаем текущую цену на 11%
         final_price += current_price  # Складываем уменьшенную цену
 
@@ -27,7 +24,3 @@ def format_with_units(value):
             return f"{value / threshold:.2f} {unit}"
     
     return f"{value:.2f}"
-
-# Рассчитываем и выводим конечный результат
-result = calculate_final_price(initial_price, num_purchases)
-print(f"Конечная сумма после всех покупок: {result}")

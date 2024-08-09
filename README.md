@@ -5,7 +5,10 @@
 
 ## Использование
 1. [Скачайте](https://github.com/xpz12/price_palc/archive/refs/heads/master.zip) и распакуйте архив в любую удобную папку.
-2. Запустите код.
+2. Установите необходимые библиотеки и запустите код.
+   ```
+   pip install -r requirements.txt
+   ```
    
    ```
    python price.py
