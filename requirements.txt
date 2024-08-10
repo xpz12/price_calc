@@ -1,3 +1,2 @@
-customtkinter
-tkinter
-pillow
+customtkinter==5.2.2
+Pillow==10.4.0

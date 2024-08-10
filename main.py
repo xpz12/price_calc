@@ -9,7 +9,7 @@ class App(CTk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.geometry('460x370')
+        self.geometry('460x570')
         self.title("Credits to @zxpixty")
         self.resizable(False, True)
 
