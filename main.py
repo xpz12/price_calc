@@ -11,7 +11,7 @@ class App(CTk.CTk):
 
         self.geometry('460x570')
         self.title("Credits to @zxpixty")
-        self.resizable(False, True)
+        self.resizable(False, False)
 
         self.logo = CTk.CTkImage(dark_image=Image.open('img.png'), size = (460, 150))
         self.logo_label = CTk.CTkLabel(master=self, text='', image=self.logo)
@@ -43,11 +43,6 @@ class App(CTk.CTk):
         self.settings_frame = CTk.CTkFrame(master=self)
         self.settings_frame.grid(row=4, column=0, padx=(20, 20), pady=(20, 0), sticky='nsew')
 
-        self.cb_digits_var = tkinter.StringVar()
-        self.cb_digits = CTk.CTkCheckBox(master=self.settings_frame, text = 'Животные', variable=self.cb_digits_var,
-                                         onvalue=digits, offvalue="")
-        self.cb_digits.grid(row=2, column=0, padx=10)
-
         self.appereance_mode_option_menu = CTk.CTkOptionMenu(master=self.settings_frame,
                                                              values=['Light', 'Dark', 'System'],
                                                              command=self.change_appereance_mode_event)
@@ -58,11 +53,6 @@ class App(CTk.CTk):
     def change_appereance_mode_event(self, new_appereance_mode):
         CTk.set_appearance_mode(new_appereance_mode)
         
-    
-    def get_value(self):
-        chars = ''.join(self.cb_digits_var.get())
-
-        return chars
 
     def generate_score(self):
         self.entry_final_num.insert(0, str(price.calculate_final_price(initial_price=int(self.entry_first_num.get()), num_pricing=int(self.entry_second_num.get()))))
