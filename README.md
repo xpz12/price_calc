@@ -11,7 +11,7 @@
    ```
    
    ```
-   python price.py
+   python main.py
    ```
 3. Введите значения по подсказкам.
 
