@@ -5,8 +5,8 @@ def calculate_final_price(initial_price, num_pricing):
     current_price = initial_price
     
     for _ in range(num_pricing):
-        current_price += current_price * 0.11  # Уменьшаем текущую цену на 11%
-        final_price += current_price  # Складываем уменьшенную цену
+        final_price += current_price  # Складываем цену
+        current_price += current_price * 0.11  # Складываем цену и уменьшаем на 11%
 
     # Округляем конечную сумму и форматируем с разделением тысяч
     formatted_price = f"{round(final_price):,}".replace(",", ".")
