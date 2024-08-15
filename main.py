@@ -1,5 +1,4 @@
 import customtkinter as CTk
-import tkinter
 import price
 from PIL import Image
 
@@ -63,7 +62,7 @@ class App(CTk.CTk):
                                                              values=['Light', 'Dark', 'System'],
                                                              command=self.change_appereance_mode_event)
         self.appereance_mode_option_menu.grid(row=3, column=0, columnspan=4, pady=(10, 10))
-        self.appereance_mode_option_menu.set('Light')
+        self.appereance_mode_option_menu.set('System')
 
         # Кнопка для переключения на другую страницу
         self.switch_to_settings_button = CTk.CTkButton(master=home_page, text="Информация",
@@ -124,9 +123,9 @@ class App(CTk.CTk):
 Овечка: -88 90 166 (Начальная цена $100Qa)
 Коровка: -153 90 51 (Начальная цена $3.05Qi)
 
-4 Фонтаны и их доход
+4. Фонтаны и их доход
 
-Фонтаны дают 5% к доходу, и они складываются, всего фонтанов 3, получается 15% к доходу.
+Фонтаны дают 10% к доходу, и они складываются, всего фонтанов 3, получается 30% к доходу.
 
 4.1 Стоимость фонтанов
 
